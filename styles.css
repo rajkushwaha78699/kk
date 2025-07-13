@@ -1,0 +1,123 @@
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ff00ff, #6600ff, #00ffff);
+            background-size: 300% 300%;
+            animation: gradientBG 8s ease infinite;
+            color: white;
+            overflow: hidden;
+        }
+        
+        /* Navbar Styling */
+        .navbar {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            padding: 10px 0;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-link {
+            color: white;
+            font-size: 1rem;
+            margin-right: 15px;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            color: #ff00ff;
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8);
+        }
+        .hero-title {
+            font-size: 4rem;  /* Larger Text */
+            font-weight: 900;  /* Extra Bold */
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
+        }
+        .animated-text {
+            color: #ff00ff;
+            animation: colorShift 2s infinite alternate;
+        }
+        @keyframes colorShift {
+            0% { color: #ff00ff; }
+            100% { color: #00ffff; }
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        .hero-button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background: #ff00ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
+        }
+        .hero-button:hover {
+            background: #ffffff;
+            color: black;
+            box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.8);
+        }
+        .scrolling-text {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .scrolling-text p {
+            display: inline-block;
+            animation: scrollLeft 10s linear infinite;
+        }
+        @keyframes scrollLeft {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .floating-image {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 100px;
+            animation: floatAnimation 4s ease-in-out infinite;
+        }
+        @keyframes floatAnimation {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+         /* Video styling */
+         .floating-video {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 200px;
+          height: 120px;
+          display: none;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+   

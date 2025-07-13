@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pha5e Hero Section Clone</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <!-- Bootstrap JS (Already Included in Your Code) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Pha5e</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link overview-btn" href="#">Overview</a>
+                </li>
+                <li class="nav-item"><a class="nav-link contact-btn" href="#">Contact</a></li>
+               
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-light px-3" href="#" data-bs-toggle="modal" data-bs-target="#signInModal">
+                        Sign In
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Overview Modal -->
+<div class="modal fade" id="overviewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title">About Pha5e</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Pha5e is a futuristic design platform that enhances user experience with cutting-edge visuals and interactions.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Modal for Sign In -->
+<div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Script to trigger modal -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector(".overview-btn").addEventListener("click", function (event) {
+            event.preventDefault();
+            var myModal = new bootstrap.Modal(document.getElementById('overviewModal'));
+            myModal.show();
+        });
+    });
+</script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".overview-btn").addEventListener("click", function (event) {
+        event.preventDefault();
+        var myModal = new bootstrap.Modal(document.getElementById('overviewModal'));
+        myModal.show();
+    });
+});
+
+    
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center justify-content-center text-center">
+        <div class="container">
+            <div class="hero-content p-4 glassmorphism">
+                <h1 class="hero-title">Welcome to <span class="animated-text">Pha5e</span></h1>
+                <p class="hero-subtitle">Experience the future with stunning designs</p>
+                <button class="btn btn-lg hero-button">Explore Now</button>
+            </div>
+        </div>
+        <img src="image.jpg" alt="Floating Element" class="floating-image">
+    </section>
+    
+    <div class="scrolling-text">
+        <p>Innovative Design ✦ Next-Gen Experience ✦ Stunning Visuals ✦ Seamless Interaction ✦</p>
+    </div>
+
+    <!-- Scroll Video -->
+    <video id="scrollVideo" width="250" class="video-hidden" controls>
+        <source src="movie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ff00ff, #6600ff, #00ffff);
+            background-size: 300% 300%;
+            animation: gradientBG 8s ease infinite;
+            color: white;
+            overflow: auto; 
+            height: 200vh; 
+        }
+        /* Ensure parent has position relative */
+.nav-item.dropdown {
+    position: relative;
+}
+
+/* Dropdown Styling */
+.Overview-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    width: 250px;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Show dropdown when active */
+.show-dropdown {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(10px);
+}
+
+        
+        
+        
+        /* Navbar Styling */
+        .navbar {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            padding: 10px 0;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-link {
+            color: white;
+            font-size: 1rem;
+            margin-right: 15px;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            color: #ff00ff;
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8);
+        }
+        .hero-title {
+            font-size: 4rem; 
+            font-weight: 900;
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
+        }
+        .animated-text {
+            color: #ff00ff;
+            animation: colorShift 2s infinite alternate;
+        }
+        @keyframes colorShift {
+            0% { color: #ff00ff; }
+            100% { color: #00ffff; }
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        .hero-button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background: #ff00ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
+        }
+        .hero-button:hover {
+            background: #ffffff;
+            color: black;
+            box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.8);
+        }
+        .scrolling-text {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .scrolling-text p {
+            display: inline-block;
+            animation: scrollLeft 10s linear infinite;
+        }
+        @keyframes scrollLeft {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        #scrollVideo {
+            position: absolute;
+            top: 100vh; /* Start position */
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 500px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .video-visible {
+          opacity: 1; 
+        }
+        
+        
+        
+
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.from(".hero-title", { duration: 1.2, y: -100, opacity: 0, ease: "bounce.out" });
+
+            document.addEventListener("mousemove", (e) => {
+                let x = (e.clientX / window.innerWidth - 0.5) * 20;
+                let y = (e.clientY / window.innerHeight - 0.5) * 20;
+                gsap.to(".hero-content", { x, y, duration: 0.5, ease: "power2.out" });
+            });
+
+            document.querySelector(".contact-btn").addEventListener("click", function (event) {
+                event.preventDefault();
+                let phoneNumber = prompt("Enter your phone number:");
+                if (phoneNumber) {
+                    alert("Phone Number Entered: " + phoneNumber);
+                }
+            });
+
+            document.querySelector(".hero-button").addEventListener("click", function () {
+                alert("Welcome to Pha5e! 🚀 Explore the future of stunning designs.");
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                let video = document.getElementById("scrollVideo");
+            
+                function updateVideoPosition() {
+                    let scrollY = window.scrollY;
+                    
+                    if (scrollY > 300) {
+                        video.style.opacity = "1";
+                        video.style.transform = `translate(-50%, ${scrollY - 200}px)`;
+                        video.play();
+                    } else {
+                        video.style.opacity = "0";
+                        video.pause();
+                    }
+            
+                    requestAnimationFrame(updateVideoPosition);
+                }
+            
+                updateVideoPosition();
+            });
+            document.addEventListener("DOMContentLoaded", () => {
+                const overviewBtn = document.querySelector(".overview-btn");
+                const dropdown = document.querySelector(".Overview-dropdown");
+            
+                overviewBtn.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    dropdown.classList.toggle("show-dropdown");
+                });
+            
+                // Hide dropdown if clicked outside
+                document.addEventListener("click", function (event) {
+                    if (!overviewBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                        dropdown.classList.remove("show-dropdown");
+                    }
+                });
+            });
+            
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
